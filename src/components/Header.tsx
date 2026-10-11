@@ -34,8 +34,8 @@ export function Header({ lang, onChangeLang, t }: HeaderProps) {
           : 'bg-transparent py-4'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 flex items-center justify-between gap-2 sm:gap-4 w-full">
-        <a href="#hero" className="shrink min-w-0 max-w-[65%] sm:max-w-none">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 flex items-center justify-between gap-2 w-full">
+        <a href="#hero" className="shrink-0">
           <LogoFull />
         </a>
 
@@ -53,7 +53,7 @@ export function Header({ lang, onChangeLang, t }: HeaderProps) {
           ))}
         </nav>
 
-        <div className="flex items-center gap-1.5 sm:gap-3 shrink-0">
+        <div className="flex items-center gap-2 sm:gap-3 shrink-0">
           <LanguageSwitcher lang={lang} onChange={onChangeLang} />
 
           <a
