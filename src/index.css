@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  body {
+    @apply bg-ink-900 text-white font-sans;
+    overflow-x: hidden;
+  }
+  ::selection {
+    @apply bg-gold-400 text-ink-900;
+  }
+}
+
+@layer utilities {
+  .hero-cta-gradient {
+    background: linear-gradient(110deg, #F8EFCC, #E5C158, #D4AF37, #F8EFCC);
+    background-size: 240% 100%;
+    box-shadow: 0 0 0 1px rgba(248, 239, 204, 0.35), 0 12px 32px rgba(212, 175, 55, 0.22);
+    animation: heroCtaShimmer 5s ease-in-out infinite;
+  }
+  .hero-cta-gradient:hover {
+    box-shadow: 0 0 0 1px rgba(248, 239, 204, 0.65), 0 16px 40px rgba(212, 175, 55, 0.34);
+  }
+  @keyframes heroCtaShimmer {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+  .text-gradient-gold {
+    background: linear-gradient(135deg, #E5C158 0%, #D4AF37 50%, #A07F23 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .text-gradient-gold-bright {
+    background: linear-gradient(135deg, #F8EFCC 0%, #E5C158 40%, #D4AF37 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .border-gold-gradient {
+    border-image: linear-gradient(135deg, #E5C158, #D4AF37, #A07F23) 1;
+  }
+  .gold-glow {
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.15);
+  }
+  .gold-glow-hover {
+    transition: box-shadow 0.4s ease, border-color 0.4s ease, transform 0.4s ease;
+  }
+  .gold-glow-hover:hover {
+    box-shadow: 0 0 40px rgba(212, 175, 55, 0.3);
+    border-color: rgba(212, 175, 55, 0.5);
+    transform: translateY(-4px);
+  }
+  .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #111111;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #D4AF37, #A07F23);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #E5C158;
+}
