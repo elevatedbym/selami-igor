@@ -34,8 +34,8 @@ export function Header({ lang, onChangeLang, t }: HeaderProps) {
           : 'bg-transparent py-4'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 md:px-8 flex items-center justify-between gap-4">
-        <a href="#hero" className="shrink-0">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 flex items-center justify-between gap-2 sm:gap-4 w-full">
+        <a href="#hero" className="shrink min-w-0 max-w-[65%] sm:max-w-none">
           <LogoFull />
         </a>
 
@@ -53,7 +53,7 @@ export function Header({ lang, onChangeLang, t }: HeaderProps) {
           ))}
         </nav>
 
-        <div className="flex items-center gap-2 md:gap-3">
+        <div className="flex items-center gap-1.5 sm:gap-3 shrink-0">
           <LanguageSwitcher lang={lang} onChange={onChangeLang} />
 
           <a
@@ -66,7 +66,7 @@ export function Header({ lang, onChangeLang, t }: HeaderProps) {
           </a>
 
           <button
-            className="lg:hidden p-2 text-white/90 hover:text-gold-300 transition-colors"
+            className="lg:hidden p-2 text-white/90 hover:text-gold-300 transition-colors focus:outline-none"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Menu"
           >
